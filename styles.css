@@ -1,0 +1,235 @@
+/* Estilos globales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Evita el scroll */
+}
+
+/* Contenedor de la invitación */
+.invitation {
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 600px;
+    aspect-ratio: 3 / 4;
+    background-image: url('Fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    padding-top: 20px; /* Espacio para la imagen */
+}
+
+/* Imagen de XV sofia */
+.XVanios {
+    background-image: url('XV.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 30%; /* Ajusta el tamaño según sea necesario */
+}
+
+/* Contenido central */
+.content {
+    width: 80%; /* Ajusta el ancho si es necesario */
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+    color: #5f2010;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 20px; /* Tamaño de fuente agrandado para el pie de página */
+}
+
+/* Los divs que están dentro de content */
+.left, .right {
+    width: 50%;
+}
+.left {
+    padding-left: 5px;
+}
+.right {
+    padding-right: 5px;
+}
+
+/* Línea vertical */
+.center {
+    width: 2px;
+    height: 70%;
+    background-color: #5f2010;
+    margin: 0 20px; 
+    min-height: 100px;
+}
+
+.mensajito {
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Footer de la invitación */
+.invitation-footer {
+    margin-top: auto; /* Empuja el footer al final del contenedor */
+    width: 60%; /* Asegura que el footer tome todo el ancho disponible */
+    color: #5f2010;
+    font-size: 18px; /* Tamaño de fuente agrandado para el pie de página */
+    padding: 10px 0;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    text-align: center; /* Centra el texto */
+    margin-left: 20%;
+    border-bottom: 1px solid #5f2010;
+}
+
+/* Botones personalizados */
+.btn-custom {
+    background-color: #5f2010; /* Color de fondo marrón */
+    color: #fff; /* Color del texto blanco */
+    border: 2px solid #5f2010; /* Borde marrón */
+    border-radius: 20px; /* Bordes redondeados más pronunciados */
+    padding: 8px 12px; /* Espaciado interno del botón, reduce el ancho */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    font-weight: 600; /* Negrita en el texto */
+    text-transform: uppercase; /* Mayúsculas en el texto */
+    text-align: center; /* Centra el texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    width: auto; /* Ajusta el ancho al contenido del botón */
+    height: auto; /* Ajusta el alto al contenido del botón */
+    display: inline-block; /* Asegura que el botón se ajuste al contenido */
+}
+
+.btn-custom:hover {
+    background-color: #fff; /* Fondo blanco al pasar el ratón */
+    color: #5f2010; /* Texto marrón al pasar el ratón */
+    transform: scale(1.05); /* Aumenta el tamaño del botón ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.btn-custom:focus, .btn-custom:active {
+    outline: none; /* Elimina el borde predeterminado al hacer clic */
+    transform: scale(1); /* Restablece el tamaño al hacer clic */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer clic */
+}
+
+/* Botones */
+.btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+.footer-buttons {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px;
+}
+
+.gift-message {
+    max-width: 200px; /* Limita el ancho del mensaje */
+    text-align: center; /* Centra el texto dentro del div */
+    margin: 0 auto; /* Asegura que el div esté centrado horizontalmente */
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    color: #5f2010; /* Color del texto a juego con el diseño */
+    flex-grow: 1; /* Hace que el div ocupe el espacio necesario entre los botones */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 0; /* Sin padding adicional */
+        margin: 0; /* Sin margen adicional */
+        width: 100vw; /* Ancho total de la ventana */
+        height: 100vh; /* Alto total de la ventana */
+        display: flex; /* Para centrar el contenido */
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra el contenido verticalmente */
+        box-sizing: border-box; /* Incluye el borde en el tamaño del contenedor */
+        overflow: hidden; /* Para evitar el overflow */
+    }
+
+    .invitation {
+        width: 100%; /* Ancho completo del contenedor */
+        max-width: 600px;
+        height: 100%; /* Altura completa del contenedor */
+        aspect-ratio: 3 / 4;
+        background-image: url('Fondo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+        padding-top: 20px; /* Espacio para la imagen */
+        margin: 0; /* Elimina márgenes */
+        box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+        display: flex;
+        flex-direction: column; /* Para que el contenido se ordene verticalmente */
+        justify-content: space-between; /* Distribuye el contenido verticalmente */
+    }
+
+    /* Ajuste del tamaño de fuente para pantallas pequeñas */
+    .invitation p {
+        font-size: 0.8em; /* Ajuste del tamaño de letra general */
+    }
+
+    .XVanios {
+        height: 20%; /* Ajuste para pantallas pequeñas */
+    }
+
+    .content {
+        height: 40%;
+    } 
+
+    .center {
+        height: 70%;
+        width: 1%;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .left p, .right p {
+        font-size: 1rem;
+    }
+
+    .invitation-footer {
+        margin-top: 0;
+        width: 60%;
+        font-size: 1.2rem; /* Ajuste del tamaño de letra para el pie de página */
+        border-bottom: 1px solid #5f2010; /* Línea divisoria en el pie de página */
+    }
+
+    .mensajito {
+        margin-top: 15%;
+        margin-bottom: 10%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .footer-buttons {
+        width: 100%; /* Botones a lo ancho de la invitación */
+        margin-top: auto; /* Empuja hacia el fondo */
+    }
+
+    .btn-custom {
+        height: auto;
+        width: 48%; /* Botones del mismo tamaño */
+        font-size: 0.8em; /* Ajuste del tamaño de letra para botones */
+    }
+
+    .parrafoCBU {
+        padding-top: 10%;
+    }
+
+    .gift-message {
+        max-width: 200px; /* Limita el ancho del mensaje */
+        text-align: center; /* Centra el texto dentro del div */
+        margin: 0 auto; /* Asegura que el div esté centrado horizontalmente */
+        font-size: 18px; /* Ajusta el tamaño del texto */
+        color: #5f2010; /* Color del texto a juego con el diseño */
+        flex-grow: 1; /* Hace que el div ocupe el espacio necesario entre los botones */
+    }
+}
