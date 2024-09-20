@@ -1,3 +1,12 @@
+window.onload = function() {
+    // Ocultar el preloader
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+
+    // Generar la invitación después de que la página ha cargado
+    generarInvitacion();
+};
+
 // Función para obtener los parámetros de la URL
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
@@ -22,6 +31,3 @@ function generarInvitacion() {
     const mailtoLink = `mailto:example@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     confirmarAsistenciaElement.href = mailtoLink;
 }
-
-// Generar la invitación al cargar la página
-window.onload = generarInvitacion;
