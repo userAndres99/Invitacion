@@ -49,7 +49,7 @@ function enviarConfirmacion(invitados) {
             console.log('SUCCESS!', response.status, response.text);
             alert('Confirmación enviada exitosamente.');
         }, function(error) {
-            console.log('FAILED...', error);
-            alert('Error al enviar la confirmación.');
+            console.error('FAILED...', error);
+            alert('Error al enviar la confirmación: ' + JSON.stringify(error));
         });
 }
