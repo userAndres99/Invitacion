@@ -24,10 +24,30 @@ function generarInvitacion() {
         invitadosElement.innerHTML = 'No hay invitados especificados.';
     }
 
-    // Generar el enlace mailto
+    // Configurar el evento de clic para el botón de confirmar asistencia
     const confirmarAsistenciaElement = document.getElementById('confirmar-asistencia');
-    const subject = 'Confirmación';
-    const body = `Las Personas: ${invitados.join(', ')} confirmaron asistencia`;
-    const mailtoLink = `mailto:example@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    confirmarAsistenciaElement.href = mailtoLink;
+    confirmarAsistenciaElement.addEventListener('click', function(event) {
+        event.preventDefault();
+        enviarConfirmacion(invitados);
+    });
+}
+
+// Función para enviar la confirmación de asistencia usando EmailJS
+function enviarConfirmacion(invitados) {
+    const invitadosString = invitados.join(', ');
+    const message = `${invitadosString} confirmaron asistencia`;
+
+    const templateParams = {
+        invitados: invitadosString,
+        message: message
+    };
+
+    emailjs.send('service_8sgi4l7', 'template_nk52r3a', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Confirmación enviada exitosamente.');
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Error al enviar la confirmación.');
+        });
 }
