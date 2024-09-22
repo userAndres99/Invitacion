@@ -1,7 +1,4 @@
 window.onload = function() {
-    // Inicializar EmailJS
-    emailjs.init("YuhNLEEbOV1b_o_7q");
-
     // Ocultar el preloader
     const preloader = document.getElementById('preloader');
     preloader.style.display = 'none';
