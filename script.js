@@ -44,7 +44,7 @@ function enviarConfirmacion(invitados) {
 
     console.log('Enviando confirmación con los siguientes parámetros:', templateParams);
 
-    emailjs.send('YuhNLEEbOV1b_o_7q', 'template_nk52r3a', templateParams)
+    emailjs.send('service_8sgi4l7', 'template_nk52r3a', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert('Confirmación enviada exitosamente.');
