@@ -67,12 +67,13 @@ body, html {
 }
 
 .mensajito {
+    margin-top: 10px;
     text-align: center; /* Centra el texto horizontalmente */
 }
 
 /* Footer de la invitación */
 .invitation-footer {
-    margin-top: auto; /* Empuja el footer al final del contenedor */
+    margin-top: 15px; /* Empuja el footer al final del contenedor */
     width: 60%; /* Asegura que el footer tome todo el ancho disponible */
     color: #5f2010;
     font-size: 18px; /* Tamaño de fuente agrandado para el pie de página */
