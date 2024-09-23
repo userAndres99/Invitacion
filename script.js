@@ -44,6 +44,12 @@ function enviarConfirmacion(invitados) {
     const invitadosString = invitados.join(', ');
     const message = `${invitadosString} confirmaron asistencia`;
 
+    // Verificar si ya se ha confirmado la asistencia
+    if (localStorage.getItem(invitadosString)) {
+        mostrarMensaje('Ya has confirmado asistencia anteriormente.');
+        return;
+    }
+
     const templateParams = {
         invitados: invitadosString,
         message: message
@@ -54,9 +60,18 @@ function enviarConfirmacion(invitados) {
     emailjs.send('service_8sgi4l7', 'template_nk52r3a', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            alert('Confirmación enviada exitosamente.');
+            localStorage.setItem(invitadosString, true); // Guardar confirmación en localStorage
+            mostrarMensaje('Has confirmado asistencia. ¡Muchas gracias!');
         }, function(error) {
             console.error('FAILED...', error);
             alert('Error al enviar la confirmación: ' + JSON.stringify(error));
         });
+}
+
+// Función para mostrar el mensaje de confirmación
+function mostrarMensaje(mensaje) {
+    const mensajeConfirmacionElement = document.getElementById('mensaje-confirmacion');
+    const mensajeTextoElement = document.getElementById('mensaje-texto');
+    mensajeTextoElement.textContent = mensaje;
+    mensajeConfirmacionElement.style.display = 'block';
 }
