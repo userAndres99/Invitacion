@@ -171,32 +171,28 @@ body, html {
     margin: 10px 0; /* Ajusta el margen según sea necesario */
 }
 
-.tooltip {
-    position: absolute;
-    background-color: #333;
+.mensaje-iframe {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border: none;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 10px;
     opacity: 0;
     transition: opacity 0.3s;
-    white-space: nowrap;
 }
 
-.tooltip.show {
+.mensaje-iframe.show {
     opacity: 1;
-}
-
-.tooltip::after {
-    content: '';
-    position: absolute;
-    bottom: 100%; /* At the top of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #333 transparent;
 }
 
 /* Responsive */

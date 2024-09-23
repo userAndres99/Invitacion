@@ -68,27 +68,35 @@ function enviarConfirmacion(invitados) {
         });
 }
 
-// Función para mostrar el mensaje de confirmación en un tooltip
+// Función para mostrar el mensaje de confirmación en un iframe
 function mostrarMensaje(mensaje) {
-    const tooltip = document.getElementById('tooltip');
-    const tooltipText = document.getElementById('tooltip-text');
-    const botonConfirmar = document.getElementById('confirmar-asistencia');
+    const iframe = document.getElementById('mensaje-iframe');
+    iframe.contentWindow.document.open();
+    iframe.contentWindow.document.write(`
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                margin: 0;
+                font-family: Arial, sans-serif;
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        </style>
+        <body>${mensaje}</body>
+    `);
+    iframe.contentWindow.document.close();
 
-    tooltipText.textContent = mensaje;
+    iframe.style.display = 'block';
+    iframe.classList.add('show');
 
-    // Posicionar el tooltip sobre el botón de confirmar asistencia
-    const rect = botonConfirmar.getBoundingClientRect();
-    tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
-    tooltip.style.left = `${rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2)}px`;
-
-    tooltip.style.display = 'block';
-    tooltip.classList.add('show');
-
-    // Ocultar el tooltip después de 3 segundos
+    // Ocultar el iframe después de 3 segundos
     setTimeout(() => {
-        tooltip.classList.remove('show');
+        iframe.classList.remove('show');
         setTimeout(() => {
-            tooltip.style.display = 'none';
+            iframe.style.display = 'none';
         }, 300);
     }, 3000);
 }
