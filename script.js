@@ -30,6 +30,13 @@ function generarInvitacion() {
         event.preventDefault();
         enviarConfirmacion(invitados);
     });
+
+    // Configurar el evento de clic para el botón de ubicación
+    const ubicacionElement = document.getElementById('ubicacion');
+    ubicacionElement.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'https://maps.app.goo.gl/r8r8NZy1CeUkt8iV7?g_st=iw';
+    });
 }
 
 // Función para enviar la confirmación de asistencia usando EmailJS
