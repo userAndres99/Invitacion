@@ -81,8 +81,9 @@ function mostrarMensaje(mensaje) {
                 height: 100%;
                 margin: 0;
                 font-family: Arial, sans-serif;
-                color: #fff;
-                background-color: rgba(0, 0, 0, 0.8);
+                color: #5f2010;
+                background-color: #f7f6ed;
+                text-align: center;
             }
         </style>
         <body>${mensaje}</body>

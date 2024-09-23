@@ -177,10 +177,10 @@ body, html {
     left: 25%;
     width: 50%;
     height: 50%;
-    border: none;
+    border: 5px solid #5f2010; /* Borde alrededor del iframe */
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
+    background-color: #f7f6ed; /* Color de fondo del iframe */
+    color: #5f2010; /* Color del texto */
     text-align: center;
     display: flex;
     justify-content: center;
