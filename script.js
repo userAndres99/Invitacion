@@ -68,10 +68,19 @@ function enviarConfirmacion(invitados) {
         });
 }
 
-// Función para mostrar el mensaje de confirmación
+// Función para mostrar el mensaje de confirmación en un tooltip
 function mostrarMensaje(mensaje) {
-    const mensajeConfirmacionElement = document.getElementById('mensaje-confirmacion');
-    const mensajeTextoElement = document.getElementById('mensaje-texto');
-    mensajeTextoElement.textContent = mensaje;
-    mensajeConfirmacionElement.style.display = 'block';
+    const tooltip = document.getElementById('tooltip');
+    const tooltipText = document.getElementById('tooltip-text');
+    tooltipText.textContent = mensaje;
+    tooltip.style.display = 'block';
+    tooltip.classList.add('show');
+
+    // Ocultar el tooltip después de 3 segundos
+    setTimeout(() => {
+        tooltip.classList.remove('show');
+        setTimeout(() => {
+            tooltip.style.display = 'none';
+        }, 300);
+    }, 3000);
 }
