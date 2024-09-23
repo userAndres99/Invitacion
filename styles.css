@@ -67,7 +67,7 @@ body, html {
 }
 
 .mensajito {
-    margin-top: 10px;
+    
     text-align: center; /* Centra el texto horizontalmente */
 }
 
@@ -119,6 +119,7 @@ body, html {
 .btn {
     flex: 1;
     margin: 0 5px;
+    /*margin-bottom: 5%; */
 }
 
 .footer-buttons {
@@ -137,6 +138,35 @@ body, html {
     font-size: 14px; /* Ajusta el tamaño del texto */
     color: #5f2010; /* Color del texto a juego con el diseño */
     flex-grow: 1; /* Hace que el div ocupe el espacio necesario entre los botones */
+}
+
+/* Flecha hacia abajo */
+.arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        border-top-color: black;
+    }
+    50% {
+        border-top-color: white;
+    }
+}
+
+/* Contenedor de la flecha */
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; /* Ajusta el margen según sea necesario */
 }
 
 /* Responsive */
@@ -205,7 +235,7 @@ body, html {
     }
 
     .mensajito {
-        margin-top: 15%;
+        
         margin-bottom: 10%;
         padding-left: 10%;
         padding-right: 10%;
