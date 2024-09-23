@@ -173,9 +173,6 @@ body, html {
 
 /* Barra flotante para mensajes de confirmación */
 #mensaje-confirmacion {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     background-color: #5f2010; /* Color de fondo marrón */
     color: #fff; /* Color del texto blanco */
@@ -183,9 +180,9 @@ body, html {
     text-align: center;
     font-weight: bold;
     display: none; /* Oculto por defecto */
-    z-index: 10000; /* Asegura que esté por encima de otros elementos */
     transition: transform 0.3s ease-in-out;
-    transform: translateY(100%); /* Inicialmente oculto fuera de la vista */
+    transform: translateY(-100%); /* Inicialmente oculto fuera de la vista */
+    margin-bottom: 10px; /* Espacio entre el mensaje y el footer-buttons */
 }
 
 #mensaje-confirmacion.show {
