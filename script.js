@@ -72,7 +72,15 @@ function enviarConfirmacion(invitados) {
 function mostrarMensaje(mensaje) {
     const tooltip = document.getElementById('tooltip');
     const tooltipText = document.getElementById('tooltip-text');
+    const botonConfirmar = document.getElementById('confirmar-asistencia');
+
     tooltipText.textContent = mensaje;
+
+    // Posicionar el tooltip sobre el botón de confirmar asistencia
+    const rect = botonConfirmar.getBoundingClientRect();
+    tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
+    tooltip.style.left = `${rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2)}px`;
+
     tooltip.style.display = 'block';
     tooltip.classList.add('show');
 
